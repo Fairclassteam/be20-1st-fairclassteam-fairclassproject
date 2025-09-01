@@ -149,6 +149,16 @@ CREATE TABLE lecture (
   FOREIGN KEY (admin_code)     REFERENCES administrator(admin_code)
 ) ENGINE=INNODB;
 
+-- lecture_time 테이블 추가
+CREATE TABLE lecture_time (
+lecture_time_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+lecture_code    BIGINT NOT NULL,
+day_of_week     ENUM('MON','TUE','WED','THU','FRI','SAT') NOT NULL,
+start_time      TIME NOT NULL,
+end_time        TIME   NOT NULL,
+FOREIGN KEY (lecture_code) REFERENCES lecture(lecture_code)
+) ENGINE=INNODB;
+
 CREATE TABLE course_book (
   book_code    BIGINT       NOT NULL AUTO_INCREMENT,
   lecture_code BIGINT       NOT NULL,
@@ -180,11 +190,13 @@ CREATE TABLE waitlist (
   FOREIGN KEY (stu_code)     REFERENCES student(stu_code)
 ) ENGINE=INNODB;
 
+-- unique key 추가 
 CREATE TABLE basket (
   basket_code  BIGINT NOT NULL AUTO_INCREMENT,
   lecture_code BIGINT NOT NULL,
   stu_code     BIGINT NOT NULL,
   PRIMARY KEY (basket_code),
+  UNIQUE KEY uq_basket (stu_code, lecture_code), -- 같은 학생이 같은 강의를 중복 담는 것 방지 
   FOREIGN KEY (lecture_code) REFERENCES lecture(lecture_code),
   FOREIGN KEY (stu_code)     REFERENCES student(stu_code)
 ) ENGINE=INNODB;
