@@ -128,11 +128,11 @@ INSERT INTO class_history (stu_code, lecture_code) VALUES
 
 -- point
 INSERT INTO point (point_description, point_amount) VALUES
-('회원가입 보너스', 100),
-('강의평 작성', 50),
-('출석 체크', 20),
-('이벤트 참여', 200),
-('추천인 보상', 150);
+('강의평가 열람', -5),
+('강의평가 작성', 15),
+('초기 포인트', 10),          -- point_code = 3
+('신고 패널티', -15),         -- point_code = 4
+('기타 보상', 5);             -- point_code = 5
 
 -- point_history
 INSERT INTO point_history (stu_code, point_code, date) VALUES
