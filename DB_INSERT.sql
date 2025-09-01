@@ -88,6 +88,14 @@ INSERT INTO lecture (semester_code, subject_code, professor_code, classroom_code
 (2, 4, 4, 4, 3, 70, 4, 'Y', '2025-01-04', '2025-01-04'),
 (3, 5, 5, 5, 4, 80, 5, 'N', '2025-01-05', '2025-01-05');
 
+-- lecture_time 추가 
+INSERT INTO lecture_time (lecture_code, day_of_week, start_time, end_time) VALUES
+  (1, 'MON', '09:00:00', '10:15:00'),
+  (2, 'TUE', '10:30:00', '11:45:00'),
+  (3, 'WED', '13:00:00', '14:15:00'),
+  (4, 'THU', '14:30:00', '15:45:00'),
+  (5, 'FRI', '16:00:00', '17:15:00');
+
 -- course_book
 INSERT INTO course_book (lecture_code, book_name, author, publisher) VALUES
 (1, '알고리즘 기초', '김교수', '한빛미디어'),
