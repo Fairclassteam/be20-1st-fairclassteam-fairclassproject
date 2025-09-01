@@ -20,15 +20,14 @@ FROM point_history ph
 JOIN point p ON p.point_code = ph.point_code
 GROUP BY ph.stu_code;
 
--- 특정 학생 내역
--- 학생예시: student_code = 1
+-- test case: 특정 학생 내역 (stu_code = 1인 학생)
 SELECT ph.use_code, ph.date, p.point_description, p.point_amount
 FROM point_history ph
 JOIN point p ON p.point_code = ph.point_code
 WHERE ph.stu_code = 1
 ORDER BY ph.date DESC, ph.use_code DESC;
 
--- 특정 학생 잔액
+-- test case: 특정 학생 잔액 (stu_code = 1인 학생)
 SELECT balance
 FROM v_student_point_balance
 WHERE stu_code = 1;
@@ -52,7 +51,9 @@ BEGIN
   END IF;
 END//
 DELIMITER ;
--- 사용: CALL sp_grant_initial_points_once(1);
+-- 사용: 
+
+CALL sp_grant_initial_points_once(1);
 
 -- 1-3. 강의평 작성 완료 시 +15점 부여 (trigger 구문으로 작성해서 시스템 자동화 암시)
 DELIMITER //
@@ -150,7 +151,9 @@ BEGIN
   WHERE lr.lecture_review_code = in_review;
 END //
 DELIMITER ;
--- 사용: CALL sp_report_review(1, 3, 2);
+
+-- test case
+CALL sp_report_review(1, 3, 2);
 
 -- 2-3. 신고 내용 조회
 -- 전체(최신 우선)
@@ -210,7 +213,8 @@ BEGIN
   COMMIT;
 END //
 DELIMITER ;
--- 사용 예:
--- CALL sp_apply_report_penalty(1, (SELECT point_code FROM point WHERE point_description='신고 패널티' LIMIT 1));
+
+-- test case
+CALL sp_apply_report_penalty(1, (SELECT point_code FROM point WHERE point_description='신고 패널티' LIMIT 1));
 
 
