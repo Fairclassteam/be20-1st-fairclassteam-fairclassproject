@@ -253,7 +253,7 @@ gif
 <details>
   <summary>강의 평가 (평점 부여, 후기 작성, 평가 열람, 평가 조회, 평가 삭제) </summary>
 
-gif
+![강의평가](https://github.com/user-attachments/assets/d6cfab9b-139a-4d5f-864c-de10dcc86398)
 </details>
 
 
