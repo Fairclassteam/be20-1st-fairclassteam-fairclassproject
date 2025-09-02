@@ -289,7 +289,7 @@ gif
 ###  강의 관리 기능
 
 <details>
-  <summary>강의 관리 (강의 등록, 강의 수정, 상태 관리)</summary>
+  <summary>강의 관리 (강의 등록, 수정, 상태 관리)</summary>
 
 ![강의등록](https://github.com/user-attachments/assets/2f2e6efd-1a9d-4478-8004-fd43a26753c3)
 </details>
