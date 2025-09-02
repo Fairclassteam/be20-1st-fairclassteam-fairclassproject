@@ -58,7 +58,9 @@ VALUES (1,1,CURDATE());
 
 -- 1.3 본인 강의 평가 조회
 -- 학생1 이라는 이름을 가진 학생의 강의 평가 조회
-SELECT DATE_FORMAT(se.year, '%Y') AS 작성년도, se.start_date AS 개강일 , se.last_day_of_class  AS 종강일 , sb.subject_name AS 강의이름, lr.lecture_review AS 강의평가
+SELECT 	se.year AS '작성 날짜',  
+			sb.subject_name AS '강의이름', 
+			lr.lecture_review AS '강의평가'
   FROM lecture_review lr
   JOIN student s ON lr.stu_code = s.stu_code
   JOIN lecture l ON l.lecture_code = lr.lecture_code
