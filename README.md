@@ -384,6 +384,8 @@ gif
 gif
 </details>
 
+<p>&nbsp;</p>
+
 ###  포인트 관리 기능
 
 <details>
@@ -415,6 +417,8 @@ gif
 gif
 </details>
 
+<p>&nbsp;</p>
+
 ###  신고 관리 기능
 
 <details>
@@ -445,6 +449,8 @@ gif
 
 gif
 </details>
+
+<p>&nbsp;</p>
 
 ###  알림 관리 기능
 
@@ -492,6 +498,8 @@ gif
 gif
 </details>
 
+<p>&nbsp;</p>
+
 ###  공지사항 관리 기능
 
 <details>
@@ -529,7 +537,7 @@ gif
 gif
 </details>
 
-
+<p>&nbsp;</p>
 
 
 ## 10. 📖 회고록
