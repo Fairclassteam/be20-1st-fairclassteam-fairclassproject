@@ -10,7 +10,9 @@ CREATE OR REPLACE PROCEDURE add_lecture_review(
     IN p_load INT,
     IN p_difficulty INT,
     IN p_teaching INT,
-    IN p_achievement INT
+    IN p_achievement INT,
+    IN p_created_at DATE,
+    IN p_updated_at DATE 
 )
 BEGIN 
    -- 학생이 강의를 수강했는지 확인 
@@ -23,21 +25,28 @@ BEGIN
    	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '강의 후기는 50자 이상으로 작성해야합니다.';
    END if;
    
+   -- lecture review table에 작성된 강의 평가 data 삽입
    INSERT INTO lecture_review (
 	    lecture_code, stu_code, lecture_review, `load`, difficulty, teaching, achievement, created_at, updated_at
 	) VALUES 
-	    (p_lecture_code, p_stu_code, p_review, p_load, p_difficulty, p_teaching, p_achievement
+	    (p_lecture_code, p_stu_code, p_review, p_load, p_difficulty, p_teaching, p_achievement, p_created_at, p_updated_at
 	);
+	
+	-- 포인트 히스토리에 기록
+	-- 강의 평가 작성시 +15점 부여
+	INSERT INTO point_history (stu_code, point_code, date)
+   VALUES (
+   	p_stu_code,
+   	2,
+    	CURDATE()
+  	); 	
 END //
 DELIMITER ;
-CALL add_lecture_review(1,1,'수업이  체계적이고 이해하기 쉽다.',3,2,5,5,'2025-01-15','2025-01-15');
-CALL add_lecture_review(2,2,'교재가 어려웠지만 교수님 설명이 좋았다.',4,3,4,4,'2025-01-16','2025-01-16');
-CALL add_lecture_review(3,3,'실습 위주라서 도움이 많이 되었다.',5,4,5,5,'2025-01-17','2025-01-17');
-CALL add_lecture_review(4,4,'수업이 지루하고 과제가 많았다.',5,5,2,2,'2025-01-18','2025-01-18');
-CALL add_lecture_review(5,5,'현실적인 예제가 많아 좋았다.',3,3,4,5,'2025-01-19','2025-01-19');  
--- 수강 히스토리에 6번 강의는 없으므로 SQL 오류 (1644): 수강한 강의 이력이 존재하지 않아 작성할 수 없습니다. 출력
--- 수강 히스토리에 강의 내역이 있지만 강의 후기가 50자가 안되므로 오류 출력
-CALL add_lecture_review(6,5,'예제가 많아 좋았다.',5,5,5,5);
+
+-- test case
+CALL add_lecture_review(1,1,'수업이  체계적이고 이해하기 쉽다. 
+									하지만 교수님의 정치 성향이 마음에 들지 않았다. 
+									뭘 더 써야 될지 모르겠다. 각자 판단하길 바란다.',3,2,5,5,'2025-01-15','2025-01-15');
 
 -- 1.2 강의 평가 열람
 SELECT *
