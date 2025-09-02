@@ -19,3 +19,9 @@ UPDATE lecture l
  WHERE lecture_code = 1;
   
 SELECT * FROM lecture;
+
+-- 강의 폐강 여부
+UPDATE lecture
+SET cancel = 'Y',
+    updated_at = CURDATE()
+WHERE lecture_code = 1;
