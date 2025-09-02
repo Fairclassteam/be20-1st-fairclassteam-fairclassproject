@@ -189,8 +189,23 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
   ![3 Edit_profile](https://github.com/user-attachments/assets/cd367311-c3b5-4822-9fb3-a9625783f95a)
 </details>
 
+<details>
+  <summary>비밀번호 재설정</summary>
 
+  ![4 Reset_password](https://github.com/user-attachments/assets/0da87a66-f0ea-46dd-bc0a-ac4c8c9b1112)
+</details>
 
+<details>
+  <summary>비밀번호 찾기</summary>
+
+  ![5 Find_password](https://github.com/user-attachments/assets/cc244067-b46f-4365-a30d-ccc86ccde634)
+</details>
+
+<details>
+  <summary>회원 탈퇴</summary>
+
+![6 Delete_account](https://github.com/user-attachments/assets/40804962-ae2c-4461-9323-8e047e715f16)
+</details>
 
  <p>&nbsp;</p>
 
