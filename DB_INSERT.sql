@@ -81,12 +81,12 @@ INSERT INTO administrator (user_code, position) VALUES
 (1, '시설관리자');
 
 -- lecture
-INSERT INTO lecture (semester_code, subject_code, professor_code, classroom_code, admin_code, capacity, time, cancel, created_at, updated_at) VALUES
-(1, 1, 1, 1, 1, 50, 1, 'N', '2025-01-01', '2025-01-01'),
-(1, 2, 2, 2, 1, 40, 2, 'N', '2025-01-02', '2025-01-02'),
-(2, 3, 3, 3, 2, 60, 3, 'N', '2025-01-03', '2025-01-03'),
-(2, 4, 4, 4, 3, 70, 4, 'Y', '2025-01-04', '2025-01-04'),
-(3, 5, 5, 5, 4, 80, 5, 'N', '2025-01-05', '2025-01-05');
+INSERT INTO lecture (semester_code, subject_code, professor_code, classroom_code, admin_code, capacity, cancel, created_at, updated_at) VALUES
+(1, 1, 1, 1, 1, 50, 'N', '2025-01-01', '2025-01-01'),
+(1, 2, 2, 2, 1, 40, 'N', '2025-01-02', '2025-01-02'),
+(2, 3, 3, 3, 2, 60, 'N', '2025-01-03', '2025-01-03'),
+(2, 4, 4, 4, 3, 70, 'Y', '2025-01-04', '2025-01-04'),
+(3, 5, 5, 5, 4, 80, 'N', '2025-01-05', '2025-01-05');
 
 -- lecture_time 추가 
 INSERT INTO lecture_time (lecture_code, day_of_week, start_time, end_time) VALUES
