@@ -322,6 +322,43 @@ gif
 </details>
 
 
+###  강의평가 기능
+
+<details>
+  <summary>강의 평점 부여</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>강의 후기 작성</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>강의 평가 열람</summary>
+
+gif
+</details>
+
+ <details>
+  <summary>본인 강의 평가 조회</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>강의 평가 삭제</summary>
+
+gif
+</details>
 
 
 
