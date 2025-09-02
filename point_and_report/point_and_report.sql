@@ -56,19 +56,19 @@ DELIMITER ;
 CALL sp_grant_initial_points_once(1);
 
 -- 1-3. 강의평 작성 완료 시 +15점 부여 (trigger 구문으로 작성해서 시스템 자동화 암시)
-DELIMITER //
-CREATE OR REPLACE TRIGGER trg_lecture_review_point
-AFTER INSERT ON lecture_review
-FOR EACH ROW
-BEGIN
-  INSERT INTO point_history (stu_code, point_code, date)
-  VALUES (
-    NEW.stu_code,
-    (SELECT point_code FROM point WHERE point_description='강의평가 작성' LIMIT 1),
-    CURDATE()
-  );
-END //
-DELIMITER ;
+-- DELIMITER //
+-- CREATE OR REPLACE TRIGGER trg_lecture_review_point
+-- AFTER INSERT ON lecture_review
+-- FOR EACH ROW
+-- BEGIN
+--   INSERT INTO point_history (stu_code, point_code, date)
+--   VALUES (
+--     NEW.stu_code,
+--     (SELECT point_code FROM point WHERE point_description='강의평가 작성' LIMIT 1),
+--     CURDATE()
+--   );
+-- END //
+-- DELIMITER ;
 
 -- test for the trigger statement
 
