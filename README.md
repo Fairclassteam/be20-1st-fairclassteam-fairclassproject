@@ -206,7 +206,6 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 ![6 Delete_account](https://github.com/user-attachments/assets/40804962-ae2c-4461-9323-8e047e715f16)
 </details>
-<details>
 
 <p>&nbsp;</p>
 
