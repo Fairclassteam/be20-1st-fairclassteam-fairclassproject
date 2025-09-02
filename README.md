@@ -468,7 +468,7 @@ gif
   <summary>공지사항 목록</summary>
 
 
-gif
+![공지사항 목록조회](https://github.com/user-attachments/assets/daddbac1-ba5b-4e2e-9ac3-65e116bca954)
 </details>
 
 
@@ -476,14 +476,19 @@ gif
   <summary>공지사항 상세조회</summary>
 
 
-  gif
+  ![공지사항 상세조회](https://github.com/user-attachments/assets/73c8349e-2986-4143-8d55-603c984d1d8e)
 </details>
 
 
 <details>
-  <summary>공지사항 작성</summary>
+  <summary>공지사항 작성(관리자)</summary>
 
-gif
+![공지사항 작성(관리자)](https://github.com/user-attachments/assets/65c55a8b-c55e-45e3-a7cd-9b64c6d85145)
+</details>
+
+<details>
+  <summary>공지사항 작성(학생)</summary>
+![공지사항 작성(학생)](https://github.com/user-attachments/assets/c768f48d-2263-4f98-a135-7b6536a14151)
 </details>
 
 
@@ -494,10 +499,19 @@ gif
 </details>
 
 <details>
-  <summary>공지사항 삭제</summary>
+  <summary>공지사항 삭제(관리자)</summary>
 
-gif
+![공지사항 삭제(관리자)](https://github.com/user-attachments/assets/2dc41003-a6b2-4aeb-985f-14d377d6fa1f)
+
 </details>
+
+<details>
+  <summary>공지사항 삭제(학생)</summary>
+
+![공지사항 삭제(학생)](https://github.com/user-attachments/assets/5a1fa2c4-99de-41b1-ba11-340b2c363c53)
+
+</details>
+
 
 <p>&nbsp;</p>
 
