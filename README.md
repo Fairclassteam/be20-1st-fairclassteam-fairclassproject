@@ -211,6 +211,8 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 ###  강의 조회 기능
 
+
+
 <details>
   <summary>강의 검색</summary>
 
@@ -231,30 +233,6 @@ gif
 
 
 ![장바구니 조회 및 담기 및 삭제](https://github.com/user-attachments/assets/8832c10e-1d1e-4af5-97cd-8f8cbb28d3b9)
-</details>
-
-
-<details>
-  <summary>장바구니에 담기</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>장바구니 내 학점</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>장바구니에 삭제</summary>
-
-
-gif
 </details>
 
 
