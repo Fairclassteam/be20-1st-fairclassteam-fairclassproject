@@ -170,6 +170,9 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 ## 9. ▶️ 테스트 케이스 실행
 
 ###  회원 관리 기능 
+<details> ![1 Create account](https://github.com/user-attachments/assets/8ac90d89-1273-4392-961a-12a4787ba068) /> <summary>
+
+<details> <img width="1053" height="680" alt="ERD" src="https://github.com/user-attachments/assets/c1410650-2c25-4b29-a0c6-8a57a2b94b99" /> <summary> image
 <details> 회원가입 ![1 Create account](https://github.com/user-attachments/assets/62c17f18-91fe-4ca9-80f1-690f1ab5566b) <summary> 
  <details>   로그인![1 Create account](https://github.com/user-attachments/assets/62c17f18-91fe-4ca9-80f1-690f1ab5566b) <summary> 
 
