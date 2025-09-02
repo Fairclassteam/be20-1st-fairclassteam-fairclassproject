@@ -368,7 +368,7 @@ gif
 ###  알림 관리 기능
 
 <details>
-  <summary>알림 관리(조회, 삭제) </summary>
+  <summary>알림 관리 (조회, 삭제) </summary>
 
 ![알림 조회 및 삭제](https://github.com/user-attachments/assets/10de12fc-512b-4d8d-949c-3b5e1c97c4bd)
 </details>
