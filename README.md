@@ -175,18 +175,19 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
   <summary>회원가입</summary>
 
   ![1 Create account](https://github.com/user-attachments/assets/44ef9125-d1f1-49f5-8b17-dfb5d672f284)
+</details>
 
-  <details>
+<details>
   <summary>로그인</summary>
 
   ![2 Login](https://github.com/user-attachments/assets/7280aa04-2630-4f7c-8ff9-cb234c789e8e)
+</details>
 
-  <details>
+<details>
   <summary>회원정보 수정</summary>
 
-![3 Edit_profile](https://github.com/user-attachments/assets/cd367311-c3b5-4822-9fb3-a9625783f95a)
-
-
+  ![3 Edit_profile](https://github.com/user-attachments/assets/cd367311-c3b5-4822-9fb3-a9625783f95a)
+</details>
 
 
 
