@@ -488,6 +488,7 @@ gif
 
 <details>
   <summary>공지사항 작성(학생)</summary>
+ 
 ![공지사항 작성(학생)](https://github.com/user-attachments/assets/c768f48d-2263-4f98-a135-7b6536a14151)
 </details>
 
