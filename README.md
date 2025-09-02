@@ -209,6 +209,130 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 <p>&nbsp;</p>
 
+###  강의 조회 기능
+
+<details>
+  <summary>강의 검색</summary>
+
+  gif
+</details>
+
+
+<details>
+  <summary>강의 목록 조회</summary>
+
+gif
+</details>
+
+
+###  장바구니 기능
+
+<details>
+  <summary>장바구니 상세 조회</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>장바구니에 담기</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>장바구니 내 학점</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>장바구니에 삭제</summary>
+
+
+gif
+</details>
+
+
+  ###  수강신청 기능
+  
+<details>
+  <summary>신청하기</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>신청 취소</summary>
+
+
+gif
+  </details>
+
+
+<details>
+  <summary>수강신청 히스토리 조회</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>수강신청 대기 조회</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>수강신청 히스토리 조회</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>수강신청 대기 조회</summary>
+
+gif
+</details>
+
+ <details>
+  <summary>대기자 자동 수강 신청</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>대기 취소</summary>
+
+gif
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
