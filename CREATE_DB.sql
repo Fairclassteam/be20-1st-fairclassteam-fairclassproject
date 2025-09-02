@@ -137,7 +137,6 @@ CREATE TABLE lecture (
   classroom_code  BIGINT       NOT NULL,
   admin_code      BIGINT       NOT NULL,
   capacity        INT          NOT NULL,
-  time            INT          NOT NULL,
   cancel          ENUM('Y','N') NOT NULL,
   created_at      DATE         NULL,
   updated_at      DATE         NULL,
