@@ -239,49 +239,13 @@ gif
   ###  수강신청 기능
   
 <details>
-  <summary>신청하기</summary>
+  <summary>수강 </summary>
 
 
-  gif
+![수강신청](https://github.com/user-attachments/assets/0cb5126b-80b4-428f-a9e5-39c38d61fce2)
 </details>
 
 
-<details>
-  <summary>신청 취소</summary>
-
-
-gif
-  </details>
-
-
-
-  <details>
-  <summary>수강신청 히스토리 조회</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>수강신청 대기 조회</summary>
-
-gif
-</details>
-
- <details>
-  <summary>대기자 자동 수강 신청</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>대기 취소</summary>
-
-gif
-</details>
 
 
 ###  강의평가 기능
