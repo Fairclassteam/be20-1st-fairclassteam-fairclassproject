@@ -50,11 +50,53 @@ CALL add_lecture_review(1,1,'수업이  체계적이고 이해하기 쉽다.
 									뭘 더 써야 될지 모르겠다. 각자 판단하길 바란다.',3,2,5,5,'2025-01-15','2025-01-15');
 
 -- 1.2 강의 평가 열람
-SELECT *
-  FROM lecture_review;
+-- 강의 평가 열람시 매번 -5점 차감
+-- 포인트 잔액 계산
+-- 강의 평가 내용 반환
+DELIMITER //
+CREATE OR REPLACE PROCEDURE lecture_review_access(
+  IN in_stu BIGINT,        -- 열람하는 학생(stu_code)
+  IN in_lecture BIGINT     -- 대상 강의(lecture_code)
+)
+BEGIN
+  DECLARE bal INT DEFAULT 0;	-- bal은 balance의 줄임말
+  DECLARE v_need INT DEFAULT 5;
 
-INSERT INTO point_history(stu_code, point_code, DATE) 
-VALUES (1,1,CURDATE());
+  -- 포인트 잔액 확인 
+  -- point history에서 point code 다 찾아서 colesce로 합산 
+  SELECT COALESCE(SUM(p.point_amount),0)
+    INTO bal
+  FROM point_history ph
+  JOIN point p ON p.point_code = ph.point_code
+  WHERE ph.stu_code = in_stu;
+
+	-- 5점보다 낮으면 강의 열람 중단
+  IF bal < v_need THEN
+    SIGNAL SQLSTATE '45000'
+      SET MESSAGE_TEXT = '포인트 부족(열람 5점 필요)';
+  END IF;
+
+  START TRANSACTION;
+    -- 5점 차감 기록
+    INSERT INTO point_history (stu_code, point_code, date)
+    VALUES (in_stu, 1, CURDATE());
+
+    -- 강의평 목록 반환(원하면 정렬 변경 가능)
+    SELECT lr.lecture_review_code,
+           lr.stu_code,
+           lr.lecture_code,
+           lr.`load`, lr.difficulty, lr.teaching, lr.achievement,
+           lr.lecture_review,
+           lr.created_at, lr.updated_at
+    FROM lecture_review lr
+    WHERE lr.lecture_code = in_lecture
+    ORDER BY lr.created_at DESC, lr.lecture_review_code DESC;
+  COMMIT;
+END//
+DELIMITER ;
+
+-- test case for 강의 평가 열람
+CALL lecture_review_access(1, 1);
 
 -- 1.3 본인 강의 평가 조회
 -- 학생1 이라는 이름을 가진 학생의 강의 평가 조회
