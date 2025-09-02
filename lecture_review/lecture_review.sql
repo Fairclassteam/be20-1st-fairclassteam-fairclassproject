@@ -2,6 +2,7 @@
 -- 1.1 강의 평점 부여 및 후기 작성
 -- 반드시 강의를 수강한 이력이 있는 학생만 부여 가능 	
 -- 수강 히스토리 이력을 보고 수강 이력이 있는 학생들만 강의평가가 작성 가능한 프로시저 생성
+-- (2025.09.02) 강의 평가 프로시저 안에 포인트 +15점 기능 추가
 DELIMITER //
 CREATE OR REPLACE PROCEDURE add_lecture_review(
     IN p_lecture_code BIGINT,
