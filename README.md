@@ -368,17 +368,11 @@ gif
 ###  알림 관리 기능
 
 <details>
-  <summary>알림 삭제</summary>
+  <summary>알림 관리(조회, 삭제) </summary>
 
-gif
+![알림 조회 및 삭제](https://github.com/user-attachments/assets/10de12fc-512b-4d8d-949c-3b5e1c97c4bd)
 </details>
 
-
-<details>
-  <summary>알림 조회</summary>
-
-gif
-</details>
 
 ###  알림 기능
 
@@ -394,7 +388,7 @@ gif
   <summary>신고 접수 알림</summary>
 
 
-  gif
+  ![신고자 접수 알림](https://github.com/user-attachments/assets/5543106b-9309-4a00-9c2e-e3bd1d479ca5)
 </details>
 
 
@@ -446,8 +440,9 @@ gif
 
 <details>
   <summary>공지사항 수정</summary>
+  
 
-gif
+![공지사항 수정](https://github.com/user-attachments/assets/197eb6f8-8c7a-4b07-9d03-4640a3dffc9f)
 </details>
 
 <details>
