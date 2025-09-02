@@ -239,7 +239,7 @@ gif
   ###  수강신청 기능
   
 <details>
-  <summary>수강 </summary>
+  <summary>수강신청 (취소, 히스토리 조회, 대기 조회, 대기자 자동 수강 신청, 대기 취소) </summary>
 
 
 ![수강신청](https://github.com/user-attachments/assets/0cb5126b-80b4-428f-a9e5-39c38d61fce2)
