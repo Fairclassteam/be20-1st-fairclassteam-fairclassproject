@@ -226,12 +226,11 @@ gif
 
 
 ###  장바구니 기능
-
 <details>
-  <summary>장바구니 상세 조회</summary>
+  <summary>장바구니 종합  기능</summary>
 
 
-
+![장바구니 조회 및 담기 및 삭제](https://github.com/user-attachments/assets/8832c10e-1d1e-4af5-97cd-8f8cbb28d3b9)
 </details>
 
 
