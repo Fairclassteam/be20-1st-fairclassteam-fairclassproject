@@ -45,7 +45,7 @@ END;
 DELIMITER ;
 
 
--- 2.수강신청 내역 조회
+-- 2.수강 히스토리 조회
 -- 수강 시기, 개강일, 종강일, 강의명, 학생이름  
 SELECT DATE_FORMAT(se.year, '%Y') AS 수강년도, se.start_date AS 개강일 , se.last_day_of_class  AS 종강일 , sb.subject_name AS 강의명, u.`name` 이름
   FROM applicant a
@@ -55,6 +55,7 @@ SELECT DATE_FORMAT(se.year, '%Y') AS 수강년도, se.start_date AS 개강일 , 
   JOIN subject sb ON l.subject_code = sb.subject_code	
   JOIN semester se ON l.semester_code = se.semester_code
  WHERE u.`name` = '학생1';
+
  -- 3.수강 신청 및 대기자 자동 수강 신청
 DROP PROCEDURE IF EXISTS Application_class;
 DELIMITER //
