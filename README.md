@@ -360,17 +360,183 @@ gif
 gif
 </details>
 
+###  강의 관리 기능
+
+<details>
+  <summary>강의 등록</summary>
 
 
+gif
+</details>
 
 
+  <details>
+  <summary>강의 수정</summary>
 
 
+  gif
+</details>
 
 
+<details>
+  <summary>강의 상태 관리</summary>
 
+gif
+</details>
+
+###  포인트 관리 기능
+
+<details>
+  <summary>포인트 내역 조회</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>초기 포인트 부여</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>포인트 부여</summary>
+
+gif
+</details>
+
+
+<details>
+  <summary>포인트 차감</summary>
+
+gif
+</details>
+
+###  신고 관리 기능
+
+<details>
+  <summary>강의 평가 신고</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>신고 사유 선택</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>신고 내용 조회</summary>
+
+gif
+</details>
+
+
+<details>
+  <summary>패널티 부여</summary>
+
+gif
+</details>
+
+###  알림 관리 기능
+
+<details>
+  <summary>알림 삭제</summary>
+
+gif
+</details>
+
+
+<details>
+  <summary>알림 조회</summary>
+
+gif
+</details>
+
+###  알림 기능
+
+<details>
+  <summary>수강신청 대기자 등록 알림</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>신고 접수 알림</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>피신고 알림</summary>
+
+gif
+</details>
+
+
+<details>
+  <summary>포인트 알림</summary>
+
+gif
+</details>
+
+###  공지사항 관리 기능
+
+<details>
+  <summary>공지사항 목록</summary>
+
+
+gif
+</details>
+
+
+  <details>
+  <summary>공지사항 상세조회</summary>
+
+
+  gif
+</details>
+
+
+<details>
+  <summary>공지사항 작성</summary>
+
+gif
+</details>
+
+
+<details>
+  <summary>공지사항 수정</summary>
+
+gif
+</details>
+
+<details>
+  <summary>공지사항 삭제</summary>
+
+gif
+</details>
 
 
 
 
 ## 10. 📖 회고록
+
+
+
+
+
+
+
