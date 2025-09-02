@@ -231,7 +231,7 @@ gif
   <summary>장바구니 상세 조회</summary>
 
 
-  https://cdn.discordapp.com/attachments/1408012228199710770/1412351933502455818/6ae976ef7f09a476.gif?ex=68b7fabd&is=68b6a93d&hm=2dffcd1c00e2681fc51b283b96224ba785bfda34ab857d58e5ba8ed33c23f7de
+
 </details>
 
 
