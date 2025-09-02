@@ -171,44 +171,6 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 ###  회원 관리 기능
 
-<details>
-  <summary>회원가입</summary>
-
-  ![1 Create account](https://github.com/user-attachments/assets/44ef9125-d1f1-49f5-8b17-dfb5d672f284)
-</details>
-
-<details>
-  <summary>로그인</summary>
-
-  ![2 Login](https://github.com/user-attachments/assets/7280aa04-2630-4f7c-8ff9-cb234c789e8e)
-</details>
-
-<details>
-  <summary>회원정보 수정</summary>
-
-  ![3 Edit_profile](https://github.com/user-attachments/assets/cd367311-c3b5-4822-9fb3-a9625783f95a)
-</details>
-
-<details>
-  <summary>비밀번호 재설정</summary>
-
-  ![4 Reset_password](https://github.com/user-attachments/assets/0da87a66-f0ea-46dd-bc0a-ac4c8c9b1112)
-</details>
-
-<details>
-  <summary>비밀번호 찾기</summary>
-
-  ![5 Find_password](https://github.com/user-attachments/assets/cc244067-b46f-4365-a30d-ccc86ccde634)
-</details>
-
-<details>
-  <summary>회원 탈퇴</summary>
-
-![6 Delete_account](https://github.com/user-attachments/assets/40804962-ae2c-4461-9323-8e047e715f16)
-</details>
-<details>
-
- 
   <summary>회원 관리 기능</summary>
 
   <details>
