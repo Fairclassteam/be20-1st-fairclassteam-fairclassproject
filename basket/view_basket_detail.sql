@@ -129,7 +129,7 @@ BEGIN
   SELECT basket_code, stu_code, lecture_code
     INTO v_basket, v_stu, v_lec
   FROM fairclass.basket
-  WHERE stu_code = p_stu AND lecture_code = p_lec;
+  WHERE stu_code = p_stu_code AND lecture_code = p_lecture_code;
 
 -- 대상 행 없으면 오류 
   IF v_basket IS NULL THEN
