@@ -254,21 +254,6 @@ gif
   </details>
 
 
-<details>
-  <summary>수강신청 히스토리 조회</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>수강신청 대기 조회</summary>
-
-
-gif
-</details>
-
 
   <details>
   <summary>수강신청 히스토리 조회</summary>
