@@ -141,14 +141,7 @@ BEGIN
   INSERT INTO lecture_review_report (report_date, report_status, lecture_review_code, report_type_code)
   VALUES (CURDATE(), 'N', in_review, in_report_type);	-- report status Y or N으로 관리
 
-  	-- 신고 접수 알림 생성: 작성자에게
-  INSERT INTO notice (stu_code, notice_content, notice_date, notice_type)
-  SELECT lr.stu_code,
-         CONCAT('신고 접수: 리뷰#', in_review),
-         CURDATE(),
-         'REPORT_RECEIVED'
-  FROM lecture_review lr
-  WHERE lr.lecture_review_code = in_review;
+ 
 END //
 DELIMITER ;
 
@@ -204,12 +197,7 @@ BEGIN
     INSERT INTO point_history (stu_code, point_code, date)
     VALUES (target_stu, in_penalty_point_code, CURDATE());
 
-    -- (선택) 알림
-    INSERT INTO notice (stu_code, notice_content, notice_date, notice_type)
-    VALUES (target_stu,
-            CONCAT('신고 처리 완료. 패널티 부여 (신고#', in_report_code, ')'),
-            CURDATE(),
-            'REPORTED');
+   
   COMMIT;
 END //
 DELIMITER ;
