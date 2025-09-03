@@ -393,7 +393,7 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 <p> <데이터 INSERT>  </p>
 
-<img width="907" height="335" alt="DB Master2" src="https://github.com/user-attachments/assets/f83df824-ca86-4608-98ac-152448ba04c0" />
+<p> <img width="907" height="335" alt="DB Master2" src="https://github.com/user-attachments/assets/f83df824-ca86-4608-98ac-152448ba04c0" /> </p>
 
 <p> <INSERT 한 데이터 조회>  </p>
 </details>
@@ -406,7 +406,7 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 <p> <master에서 INSERT한 내용이 똑같이 조회할 수 있음을 확인> </p> 
 
 
-<img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
+<p> <img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" /> </p>
 
 <p> <master 서버의 binary log를 인식해서 연동하기 위한 설정> </p> 
  
