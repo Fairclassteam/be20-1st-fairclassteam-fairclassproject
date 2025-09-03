@@ -57,38 +57,64 @@ CALL sp_add_announcement(
 );
 
 
-
+DROP PROCEDURE sp_delete_announcement;
 
  -- 공지사항 삭제(soft delete)
+-- 관리자만 공지 비공개(삭제) 처리
+
+DROP PROCEDURE sp_set_announcement_visibility;
+
 DELIMITER //
-CREATE PROCEDURE sp_delete_announcement (
-    IN p_user_code BIGINT,
-    IN p_announcement_code BIGINT
+
+CREATE OR REPLACE PROCEDURE fairclass.sp_set_announcement_visibility (
+  IN p_user_code BIGINT,          -- 요청자 user_code
+  IN p_announcement_code BIGINT,  -- 대상 공지 PK
+  IN p_public ENUM('Y','N')       -- 'Y' = 공개, 'N' = 비공개
 )
 BEGIN
-    -- 관리자 권한 체크
-    IF EXISTS (SELECT 1 FROM administrator WHERE user_code = p_user_code) THEN
-        UPDATE announcement
-        SET public = 'N'
-        WHERE announcement_code = p_announcement_code;
-    ELSE
-        SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = '권한이 없습니다: 관리자만 공지사항을 삭제할 수 있습니다.';
-    END IF;
-END //
+  DECLARE v_admin_code BIGINT;
+
+  -- 1) user_code → administrator 매핑 (관리자 여부 확인)
+  SELECT a.admin_code
+    INTO v_admin_code
+  FROM fairclass.administrator a
+  WHERE a.user_code = p_user_code
+  LIMIT 1;
+
+  IF v_admin_code IS NULL THEN
+    SIGNAL SQLSTATE '45000'
+      SET MESSAGE_TEXT = '권한이 없습니다: 관리자만 공지 공개 여부를 변경할 수 있습니다.';
+  END IF;
+
+  -- 2) 지정한 공개 여부로 상태 변경 (같으면 변경 없음)
+  UPDATE fairclass.announcement
+     SET public     = p_public
+   WHERE announcement_code = p_announcement_code
+     AND public <> p_public;
+END//
+
 DELIMITER ;
+
+
  
  -- 테스트케이스(공지사항 삭제)
-CALL sp_delete_announcement(1, 3);
+CALL fairclass.sp_set_announcement_visibility(2, 4,'N');
+
+
+SELECT announcement_code, title, public 
+FROM announcement
+WHERE announcement_code = 4;
+ 
+ 
+CALL fairclass.sp_set_announcement_visibility(2, 4);
 
 SELECT announcement_code, title, public 
 FROM announcement
 WHERE announcement_code = 3;
+
  
- 
- 
- 
- 
+  
+
  
  
  
@@ -123,7 +149,7 @@ DELIMITER ;
  -- 테스트크케이스(수정)
 CALL sp_update_announcement(
     1,                      -- 관리자 user_code
-    3,                      -- 수정할 공지번호
+    5,                      -- 수정할 공지번호
     '수정된 제목',           -- 새 제목
     '수정된 내용',           -- 새 내용
     'update.png'            -- 새 이미지
@@ -132,7 +158,7 @@ CALL sp_update_announcement(
 
 SELECT announcement_code, title, content, image, posted_date
 FROM announcement
-WHERE announcement_code = 3;
+WHERE announcement_code = 5;
 
 
 
@@ -166,6 +192,4 @@ BEGIN
     WHERE announcement_code = p_announcement_code;
 END //
 DELIMITER ;
-
-
 
