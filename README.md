@@ -158,7 +158,7 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 
 
-###  UML
+###  UML <details> <img width="1504" height="1851" alt="UML_Fairclass" src="https://github.com/user-attachments/assets/b6b01f1f-039e-4d60-99c6-d64f56441247" /> <summary> image
 
 
 
