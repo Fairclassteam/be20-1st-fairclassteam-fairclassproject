@@ -1,3 +1,4 @@
+
  -- 알림  조회 (단순sql)
 SELECT notice_code,
        notice_content,
@@ -25,6 +26,11 @@ BEGIN
 END //
 DELIMITER ;
 
+-- 테스트 케이스
+CALL sp_get_student_notices(1);
+
+
+
 -- 알림 삭제(단순sql)
 -- 특정 알림 삭제
 DELETE FROM notice
@@ -50,6 +56,16 @@ BEGIN
 END //
 DELIMITER ;
 
+-- 테스트케이스
+-- 1. 알림 확인
+SELECT * FROM notice WHERE stu_code = 1;
+
+-- 2. 삭제 실행
+CALL sp_delete_student_notice(1, 1);  
+
+-- 3. 삭제 확인
+SELECT * FROM notice WHERE stu_code = 1;
+
 
 
 
@@ -58,21 +74,38 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE OR REPLACE TRIGGER trg_waitlist_after_insert
+CREATE TRIGGER trg_waitlist_after_insert
 AFTER INSERT ON waitlist
 FOR EACH ROW
 BEGIN
-  INSERT INTO notice (notice_title, notice_content, user_code, created_at)
-  VALUES (
-    '대기자 등록 완료',
-    NEW.stu_code,
-    NOW()
-  );
+    INSERT INTO notice (
+         notice_content,
+        stu_code,
+        notice_date,
+        notice_type
+        
+    )
+    VALUES (
+        '대기자 등록 완료',
+        CONCAT('강의 코드 ', NEW.lecture_code, ' 정원이 가득 차 대기자로 등록되었습니다.'),
+        NEW.stu_code,
+        NOW(),
+        'WAITLIST'
+    );
 END//
 
 DELIMITER ;
 
-                                                -- 신고자 접수 알림(피신고자도 같이)
+
+DROP TRIGGER trg_waitlist_after_insert;
+
+
+-- test case
+SELECT * FROM waitlist WHERE lecture_code = 1;
+SELECT * FROM notice WHERE stu_code = 1;
+
+
+-- 신고자 접수 알림(피신고자도 같이)
 
 
 DELIMITER //
@@ -137,8 +170,10 @@ CALL sp_report_review(2, 3, 1);
  SELECT * FROM lecture_review_report ORDER BY report_date DESC LIMIT 5;
 SELECT * FROM notice ORDER BY notice_date DESC, stu_code LIMIT 10;
  
-                                                  -- 포인트 적립시 알림 
- 
+
+
+
+ -- 포인트 적립시 알림 
  
 DELIMITER //
 
@@ -146,28 +181,45 @@ CREATE OR REPLACE TRIGGER trg_lecture_review_after_insert
 AFTER INSERT ON lecture_review
 FOR EACH ROW
 BEGIN
-  /* +15 적립 (원장 기록) */
-  INSERT INTO point_history (stu_code, point_code, date)
-  VALUES (
-    NEW.stu_code,
-    (SELECT point_code FROM point WHERE point_description='강의평가 작성' LIMIT 1),
-    CURDATE()
-  );
+    -- 포인트 지급 내역 추가
+    INSERT INTO point_history (stu_code, point_code, date)
+    VALUES (
+        NEW.stu_code,
+        (SELECT point_code FROM point WHERE point_description='강의평가 작성' LIMIT 1),
+        CURDATE()
+    );
 
-  /* 알림 */
-  INSERT INTO notice (notice_title, notice_content, user_code, created_at)
-  VALUES (
-    '강의후기 작성 포인트 +15',
-    '후기 작성으로 포인트 15점이 적립되었습니다.',
-    NEW.stu_code,
-    NOW()
-  );
+    -- 알림 추가 (notice 테이블 구조에 맞게 수정)
+    INSERT INTO notice (stu_code, notice_content, notice_date, notice_type)
+    VALUES (
+        NEW.stu_code,
+        '강의평가 작성으로 포인트 15점이 적립되었습니다.',
+        NOW(),
+        'POINT'
+    );
 END//
 
 DELIMITER ;
 
+-- test code
+-- 리뷰 작성 (lecture_review에 insert)
+INSERT INTO lecture_review (
+    lecture_code, stu_code, lecture_review,
+    `load`, difficulty, teaching, achievement,
+    created_at, updated_at
+)
+VALUES (
+    1, 1, '강의가 정말 유익했습니다. 교수님 설명이 명확하고 많은 도움이 되었습니다.',
+    4, 5, 5, 5,
+    NOW(), NOW()
+);
 
-                                                -- 강의 열람시 포인트 차감 알림
+-- 확인
+SELECT * FROM point_history WHERE stu_code = 1;
+SELECT * FROM notice WHERE stu_code = 1;
+
+
+-- 강의 열람시 포인트 차감 알림
 
 DELIMITER //
 
@@ -204,23 +256,27 @@ BEGIN
   );
 
   /* 알림 */
-  INSERT INTO notice (notice_title, notice_content, user_code, created_at)
+  INSERT INTO notice (stu_code, notice_content, notice_date, notice_type)
   VALUES (
-    '강의평가 열람 포인트 -5',
-    '강의평가 열람으로 포인트 5점이 차감되었습니다.',
-    in_stu,
-    NOW()
+     in_stu,
+  '강의평가 열람으로 포인트 5점이 차감되었습니다.',
+  NOW(),
+  'POINT'  
+   
   );
 
   COMMIT;
 END//
 
 DELIMITER ;
+DROP PROCEDURE sp_view_review_and_charge;
+-- test code
+CALL sp_view_review_and_charge(1, 1);   -- stu_code=1, review_code=1
+
+-- 검증
+SELECT * FROM point_history WHERE stu_code = 1;
+SELECT * FROM notice WHERE stu_code = 1;
 
 
 
 
-
-
-
---
