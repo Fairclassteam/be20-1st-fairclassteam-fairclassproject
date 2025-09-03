@@ -113,6 +113,7 @@ SELECT 	se.year AS '작성 날짜',
 
 -- 1.4 강의 평가 삭제
 DELIMITER //
+
 CREATE OR REPLACE PROCEDURE delete_lecture_review(
     IN p_user_code BIGINT,
     IN p_lecture_review_code BIGINT
@@ -121,42 +122,46 @@ BEGIN
     DECLARE auth VARCHAR(20);
     DECLARE v_stu_code BIGINT;
 
-    -- 1) 학생인지 권한인지 확인
-    SELECT role INTO auth 
-    FROM authorization a
-    JOIN user u ON a.auth_code = u.auth_code
-    WHERE u.user_code = p_user_code;
-    -- 2) 학생일 경우 → 본인이 쓴 리뷰만 삭제 가능
+    -- 1) 권한 확인
+    SELECT a.role INTO auth
+      FROM authorization a
+      JOIN user u ON a.auth_code = u.auth_code
+     WHERE u.user_code = p_user_code;
+
+    -- 2) 학생이면: 본인 리뷰인지 확인
     IF auth = 'STUDENT' THEN
         IF NOT EXISTS (
             SELECT 1
-            FROM lecture_review lr
-            JOIN student s ON lr.stu_code = s.stu_code
-            WHERE lr.lecture_review_code = p_lecture_review_code
-              AND s.user_code = p_user_code) THEN
-            SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '본인이 작성한 리뷰만 삭제할 수 있습니다.';
+              FROM lecture_review lr
+              JOIN student s ON lr.stu_code = s.stu_code
+             WHERE lr.lecture_review_code = p_lecture_review_code
+               AND s.user_code = p_user_code
+        ) THEN
+            SIGNAL SQLSTATE '45000'
+               SET MESSAGE_TEXT = '본인이 작성한 리뷰만 삭제할 수 있습니다.';
         END IF;
     END IF;
-    -- 3) 관리자일 경우 → 해당 리뷰가 신고되었는지 확인
-    IF auth = 'ADMIN' THEN
-        IF NOT EXISTS (
-            SELECT 1
-            FROM lecture_review_report r
-            WHERE r.lecture_review_code = p_lecture_review_code) THEN
-            SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '신고 접수된 리뷰만 삭제할 수 있습니다.';
-        END IF;
+
+    -- 3) 리뷰 작성자 stu_code 가져오기
+    SELECT stu_code
+      INTO v_stu_code
+      FROM lecture_review
+     WHERE lecture_review_code = p_lecture_review_code;
+
+    IF v_stu_code IS NULL THEN
+        SIGNAL SQLSTATE '45000'
+           SET MESSAGE_TEXT = '해당 리뷰가 존재하지 않습니다.';
     END IF;
-    -- 4) 리뷰 작성자 확인 (학생 or 관리자)
-    SELECT stu_code INTO v_stu_code
-    FROM lecture_review
-    WHERE lecture_review_code = p_lecture_review_code;
-    -- 5) 리뷰 삭제( 
+
+    -- 4) 리뷰 삭제
     DELETE FROM lecture_review
-    WHERE lecture_review_code = p_lecture_review_code;
-    -- 6) 포인트 -15 기록
+     WHERE lecture_review_code = p_lecture_review_code;
+
+    -- 5) 포인트 -15 기록 
     INSERT INTO point_history (stu_code, point_code, date)
-    VALUES (v_stu_code, 3, CURDATE());
+    VALUES (v_stu_code, 4, CURDATE());
 END //
+
 DELIMITER ;
 -- 학생이 리뷰 삭제
 CALL delete_lecture_review(2, 4); 
