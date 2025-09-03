@@ -403,12 +403,13 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
   <summary>slave 서버</summary>
 <p>  slave 서버는 slave의 스레드가 복제 계정으로 master에 접속해 binary log 를 다운하고 그 내용을  토대로 master의 변경 부분을 동일 상태로 구현한 뒤 DB에 반영하였습니다. </p> 
 <img width="836" height="863" alt="slave" src="https://github.com/user-attachments/assets/61b12549-7d9b-41d2-a685-3080bd1c9dd4" />
-<p> <master에서 INSERT한 내용이 똑같이 조회할 수 있음을 확인> </p> 
+ 
+<p> <code> <master에서 INSERT한 내용이 똑같이 조회할 수 있음을 확인> </code> </p> 
 
 
-<p> <img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" /> </p>
+<img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
 
-<p> <master 서버의 binary log를 인식해서 연동하기 위한 설정> </p> 
+<p> <code> <master 서버의 binary log를 인식해서 연동하기 위한 설정></code> </p> 
  
 </details>
 
