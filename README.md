@@ -1,4 +1,4 @@
-# "빈자리는 공평하게, 선택은 똑똑하게. 평가와 신청을 한 번에 끝내세요!"
+![초기포인트_부여](https://github.com/user-attachments/assets/7f31fdbb-5cfc-4af0-879b-008f3377d074)# "빈자리는 공평하게, 선택은 똑똑하게. 평가와 신청을 한 번에 끝내세요!"
 
 <p>&nbsp;</p>
 
@@ -273,10 +273,12 @@ gif
 ###  포인트 관리 기능
 
 <details>
-  <summary>포인트 관리 기능</summary>
+  <summary>포인트 관리 기능 (포인트 잔액 조회 및 초기 포인트 부여) </summary>
 
+![포인트_잔액_조회](https://github.com/user-attachments/assets/79b63750-4cf1-4a0c-9a78-55210b89287a)
+![초기포인트_부여](https://github.com/user-attachments/assets/dd3f9d1b-610b-4b1f-99a7-8bf4b557dcd4)
 
-포인트 관리 기능 구현은 수강 신청 기능 gif. 파일에 포함 되어 있습니다
+그 외 포인트 관리 기능 구현은 수강신청 프로시저에 포함, 기능 시연도 수강 신청 기능 gif. 파일에 포함 되어 있습니다.
 </details>
 
 
@@ -285,32 +287,10 @@ gif
 ###  신고 관리 기능
 
 <details>
-  <summary>강의 평가 신고</summary>
+  <summary>강의 평가 신고, 신고 사유 선택, 신고 내용 조회, 패널티 부여</summary>
 
+![강의평가_신고_신고_패널티_부여](https://github.com/user-attachments/assets/f29afb35-9514-4936-9ef3-70d915f3bae9)
 
-gif
-</details>
-
-
-  <details>
-  <summary>신고 사유 선택</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>신고 내용 조회</summary>
-
-gif
-</details>
-
-
-<details>
-  <summary>패널티 부여</summary>
-
-gif
 </details>
 
 <p>&nbsp;</p>
