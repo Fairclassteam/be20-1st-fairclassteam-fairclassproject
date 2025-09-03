@@ -407,7 +407,9 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 
 <img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
+
 <p> <master 서버의 binary log를 인식해서 연동하기 위한 설정> </p> 
+ 
 </details>
 
 
