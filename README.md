@@ -220,13 +220,6 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 </details>
 
 
-<details>
-  <summary>강의 목록 조회</summary>
-
-gif
-</details>
-
-
 ###  장바구니 기능
 <details>
   <summary>장바구니 (장바구니 내 학점 조회, 상세조회, 담기, 삭제) </summary>
