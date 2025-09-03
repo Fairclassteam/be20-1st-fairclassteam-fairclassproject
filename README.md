@@ -385,23 +385,23 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 <details>
   <summary>master 서버</summary>
-<p>  master 서버는 INSERT, UPDATE, DELETE 와 같이 데이터의 모든 변경 부분을 binary log에 기록합니다. </p>
+<p> <strong> master 서버는 INSERT, UPDATE, DELETE 와 같이 데이터의 모든 변경 부분을 binary log에 기록합니다. </strong> </p>
  
 <img width="902" height="521" alt="DB 서버 1" src="https://github.com/user-attachments/assets/1036d8a6-18ef-4fcc-b4f9-ebc0d0d57d95" />
 
 
 
-<p> <데이터 INSERT>  </p>
+<p> <strong> <데이터 INSERT> </strong> </p>
 
 <p> <img width="907" height="335" alt="DB Master2" src="https://github.com/user-attachments/assets/f83df824-ca86-4608-98ac-152448ba04c0" /> </p>
 
-<p> <INSERT 한 데이터 조회>  </p>
+<p> <strong> <INSERT 한 데이터 조회> </strong> </p>
 </details>
 
 
 <details>
   <summary>slave 서버</summary>
-<p>  slave 서버는 slave의 스레드가 복제 계정으로 master에 접속해 binary log 를 다운하고 그 내용을  토대로 master의 변경 부분을 동일 상태로 구현한 뒤 DB에 반영하였습니다. </p> 
+<p> <strong> slave 서버는 slave의 스레드가 복제 계정으로 master에 접속해 binary log 를 다운하고 그 내용을  토대로 master의 변경 부분을 동일 상태로 구현한 뒤 DB에 반영하였습니다. </strong> </p> 
 <img width="836" height="863" alt="slave" src="https://github.com/user-attachments/assets/61b12549-7d9b-41d2-a685-3080bd1c9dd4" />
  
 <p> <strong> master에서 INSERT한 내용이 똑같이 조회할 수 있음을 확인 </strong> </p> 
