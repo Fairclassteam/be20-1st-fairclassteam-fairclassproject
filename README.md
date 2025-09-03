@@ -399,7 +399,7 @@ gif
 </details>
 
 <details>
-  <summary>master slave 서버</summary>
+  <summary>slave 서버</summary>
 <img width="836" height="863" alt="slave" src="https://github.com/user-attachments/assets/61b12549-7d9b-41d2-a685-3080bd1c9dd4" />
 
 <img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
