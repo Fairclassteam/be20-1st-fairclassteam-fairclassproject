@@ -11,39 +11,52 @@ ORDER BY `date` ASC;
 
 -- 1. 수강 신청 취소 
 -- '학생1'의 신청 취소 
-DELETE 
-  FROM applicant 
- WHERE stu_code = 1;
--- 수강 취소하면 대기열 첫번째 순서를 수강 신청
+DROP PROCEDURE IF EXISTS sp_cancel_application;
 DELIMITER //
 
-CREATE OR REPLACE TRIGGER Application_delete
-AFTER DELETE ON applicant
-FOR EACH ROW
+CREATE PROCEDURE sp_cancel_application (
+    IN p_stu_code BIGINT,
+    IN p_lecture_code BIGINT
+)
 BEGIN
-    DECLARE v_stu_code BIGINT;
-    -- 삭제된 강의코드에 대해 대기열에서 가장 먼저 신청한 학생 찾기
-    SELECT w.stu_code INTO v_stu_code
+    DECLARE v_next_stu BIGINT;
+    DECLARE v_waitlist_code BIGINT;
+
+    START TRANSACTION;
+
+    -- 해당 신청 삭제
+    DELETE FROM applicant 
+     WHERE stu_code = p_stu_code 
+       AND lecture_code = p_lecture_code;
+	-- 수강 히스토리 삭제
+    DELETE FROM class_history
+     WHERE stu_code = p_stu_code
+       AND lecture_code = p_lecture_code;
+       
+    -- 2) 대기열 1순위 조회
+    SELECT w.waitlist_code, w.stu_code
+      INTO v_waitlist_code, v_next_stu
       FROM waitlist w
-     WHERE w.lecture_code = OLD.lecture_code
-     ORDER BY w.date ASC
-     LIMIT 1;
+     WHERE w.lecture_code = p_lecture_code
+     ORDER BY w.date ASC, w.waitlist_code ASC
+     LIMIT 1
+     FOR UPDATE;
 
-    -- 대기열 학생이 존재하면 applicant로 이동
-    IF v_stu_code IS NOT NULL THEN
-        INSERT INTO applicant(lecture_code, stu_code, applied_at)
-        VALUES (OLD.lecture_code, v_stu_code, NOW());
+    -- 3) 있으면 applicant로 승급
+    IF v_next_stu IS NOT NULL THEN
+        INSERT INTO applicant (stu_code, lecture_code, applied_at)
+        VALUES (v_next_stu, p_lecture_code, NOW());
 
-        -- 대기열에서 제거
-        DELETE FROM waitlist 
-         WHERE lecture_code = OLD.lecture_code 
-           AND stu_code = v_stu_code;
+        DELETE 
+		    FROM waitlist
+         WHERE waitlist_code = v_waitlist_code;
+         
     END IF;
-END;
-//
+
+    COMMIT;
+END //
 
 DELIMITER ;
-
 
 -- 2.수강 히스토리 조회
 -- 수강 시기, 개강일, 종강일, 강의명, 학생이름  
@@ -57,9 +70,9 @@ SELECT DATE_FORMAT(se.year, '%Y') AS 수강년도, se.start_date AS 개강일 , 
  WHERE u.`name` = '학생1';
 
  -- 3.수강 신청 및 대기자 자동 수강 신청
-DROP PROCEDURE IF EXISTS Application_class;
+DROP PROCEDURE IF EXISTS sp_Application_class;
 DELIMITER //
-CREATE PROCEDURE Application_class(
+CREATE PROCEDURE sp_application_class(
     IN p_stu_code BIGINT,
     IN p_lecture_code BIGINT
 )
@@ -112,6 +125,9 @@ BEGIN
     IF p_now < p_capacity THEN
         INSERT INTO applicant(stu_code, lecture_code, applied_at)
         VALUES (p_stu_code, p_lecture_code, NOW());
+    -- 수강 히스토리에 강의 등록
+        INSERT INTO class_history(stu_code, lecture_code)
+        VALUES (p_stu_code, p_lecture_code);
     ELSE
         IF (SELECT COUNT(*) FROM waitlist WHERE lecture_code=p_lecture_code FOR UPDATE) >= 10 THEN 
 		  ROLLBACK; 
@@ -119,6 +135,8 @@ BEGIN
 
         INSERT INTO waitlist(lecture_code, stu_code, `date`)
         VALUES (p_lecture_code, p_stu_code, NOW());
+        
+        
     END IF;
     -- 신청 과목은 장바구니에서 제거
     DELETE 
@@ -127,8 +145,8 @@ BEGIN
       AND lecture_code = p_lecture_code;
     COMMIT;
 END //
-
 DELIMITER ;
+
 -- 신청 Application_class
 call Application_class(1,4);
 call Application_class(2,3);
