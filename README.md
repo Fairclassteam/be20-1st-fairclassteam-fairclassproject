@@ -1,4 +1,4 @@
-# "빈자리는 공평하게, 선택은 똑똑하게. 평가와 신청을 한 번에 끝내세요!"
+![강의후기 포인트 차감](https://github.com/user-attachments/assets/3db20a78-9b87-49de-90ae-7150e197f6b0)# "빈자리는 공평하게, 선택은 똑똑하게. 평가와 신청을 한 번에 끝내세요!"
 
 <p>&nbsp;</p>
 
@@ -351,30 +351,29 @@ gif
   <summary>수강신청 대기자 등록 알림</summary>
 
 
-gif
+![대기자 등록 완료](https://github.com/user-attachments/assets/97f69d12-2c08-4078-81a6-194f4075ad92)
 </details>
 
 
   <details>
-  <summary>신고 접수 알림</summary>
+  <summary>신고 접수 알림(신고 접수 알림, 피신고 알림)(</summary>
 
 
   ![신고자 접수 알림](https://github.com/user-attachments/assets/5543106b-9309-4a00-9c2e-e3bd1d479ca5)
 </details>
 
-
 <details>
-  <summary>피신고 알림</summary>
+  <summary>포인트 알림(후기 작성시 15포인트 추가)</summary>
 
-gif
+![후기 작성시 15포인트 추가](https://github.com/user-attachments/assets/84a41446-c909-4af1-be7c-a599334cfc8a)
 </details>
 
-
 <details>
-  <summary>포인트 알림</summary>
+  <summary>포인트 알림(강의 후기 포인트 차감)</summary>
 
-gif
+![강의후기 포인트 차감](https://github.com/user-attachments/assets/b091cf68-86b9-4209-a4e3-45d1041d3110)
 </details>
+
 
 <p>&nbsp;</p>
 
