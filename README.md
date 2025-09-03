@@ -388,10 +388,24 @@ gif
 
 </details>
 
+## 10. 🖥️ 서버 구축
+<img width="902" height="521" alt="DB 서버 1" src="https://github.com/user-attachments/assets/1036d8a6-18ef-4fcc-b4f9-ebc0d0d57d95" />
+
+<img width="907" height="335" alt="DB Master2" src="https://github.com/user-attachments/assets/f83df824-ca86-4608-98ac-152448ba04c0" />
+
+<img width="836" height="863" alt="slave" src="https://github.com/user-attachments/assets/61b12549-7d9b-41d2-a685-3080bd1c9dd4" />
+
+<img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
+
+
+
 
 <p>&nbsp;</p>
 
-## 10. 📖 회고록
+
+
+
+## 11. 📖 회고록
 
 
 
