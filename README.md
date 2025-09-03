@@ -273,33 +273,12 @@ gif
 ###  포인트 관리 기능
 
 <details>
-  <summary>포인트 내역 조회</summary>
+  <summary>포인트 관리 기능</summary>
 
 
-gif
+포인트 관리 기능 구현은 수강 신청 기능 gif. 파일에 포함 되어 있습니다
 </details>
 
-
-  <details>
-  <summary>초기 포인트 부여</summary>
-
-
-  gif
-</details>
-
-
-<details>
-  <summary>포인트 부여</summary>
-
-gif
-</details>
-
-
-<details>
-  <summary>포인트 차감</summary>
-
-gif
-</details>
 
 <p>&nbsp;</p>
 
