@@ -214,9 +214,9 @@ Fairclass 수강신청 서비스는 수강평가 사이트도 함께 제공하�
 
 
 <details>
-  <summary>강의 검색</summary>
+  <summary>강의 (검색,목록 조회)</summary>
 
-  gif
+  ![강의등록, 조회12](https://github.com/user-attachments/assets/d0b8adc1-bf04-409f-8099-d0976a5a175d)
 </details>
 
 
@@ -389,15 +389,22 @@ gif
 </details>
 
 ## 10. 🖥️ 서버 구축
+
+<details>
+  <summary>master 서버</summary>
 <img width="902" height="521" alt="DB 서버 1" src="https://github.com/user-attachments/assets/1036d8a6-18ef-4fcc-b4f9-ebc0d0d57d95" />
 
 <img width="907" height="335" alt="DB Master2" src="https://github.com/user-attachments/assets/f83df824-ca86-4608-98ac-152448ba04c0" />
 
+</details>
+
+<details>
+  <summary>master slave 서버</summary>
 <img width="836" height="863" alt="slave" src="https://github.com/user-attachments/assets/61b12549-7d9b-41d2-a685-3080bd1c9dd4" />
 
 <img width="868" height="108" alt="slave 2" src="https://github.com/user-attachments/assets/f1010e1a-e24e-4afe-9239-a3e58d30c268" />
 
-
+</details>
 
 
 <p>&nbsp;</p>
